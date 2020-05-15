@@ -13,30 +13,27 @@ window.addEventListener("load", function() {
    let cargoStatus = document.getElementById("cargoStatus");
 
    form.addEventListener("submit", function() {
+      event.preventDefault();
+
       if (pilotInput.value === "" || copilotInput.value === "" ||
          fuelInput.value === "" || cargoInput.value === "") {
          alert('All fields required!');
-         preventDefault();
       }
 
-      if (!isNaN(pilotInput.value)) {
+      if (!isNaN(Number(pilotInput.value))) {
          alert('Invalid input. Please enter a pilot name.');
-         event.preventDefault();
       }
 
-      if (!isNaN(copilotInput.value)) {
+      if (!isNaN(Number(copilotInput.value))) {
          alert('Invalid input. Please enter a co-pilot name.');
-         event.preventDefault();
       }
 
       if (isNaN(fuelInput.value)) {
          alert('Invalid input. Please enter a number for fuel level.');
-         event.preventDefault();
       }
 
       if (isNaN(cargoInput.value)) {
          alert('Invalid input. Please enter a number for cargo mass.');
-         event.preventDefault();
       }
 
       if (isNaN(pilotInput.value) && isNaN(copilotInput.value) &&
@@ -77,7 +74,6 @@ window.addEventListener("load", function() {
             });
 
          });
-         event.preventDefault();
       }
 
    });
