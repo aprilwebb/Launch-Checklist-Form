@@ -45,15 +45,24 @@ window.addEventListener("load", function() {
             launchStatus.style.color = "red";
             launchStatus.innerHTML = `Shuttle Not Ready For Launch`;
             fuelStatus.innerHTML = `Fuel level too low for launch.`;
-         } else if (cargoInput.value > 10000) {
+         } else {
+            fuelStatus.innerHTML = `Fuel level is high enough for launch.`;
+         }
+
+         if (cargoInput.value > 10000) {
             faultyItems.style.visibility = "visible";
             launchStatus.style.color = "red";
             launchStatus.innerHTML = `Shuttle Not Ready For Launch`;
             cargoStatus.innerHTML = `Cargo mass too large for launch.`;
          } else {
+            cargoStatus.innerHTML = `Cargo mass is low enough for launch.`;
+         }
+
+         if (fuelInput.value > 10000 && cargoInput.value < 10000) {
             faultyItems.style.visibility = "visible";
             launchStatus.style.color = "green";
             launchStatus.innerHTML = `Shuttle Is Ready For Launch`;
+
          }
 
          fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
