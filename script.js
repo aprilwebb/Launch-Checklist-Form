@@ -20,11 +20,11 @@ window.addEventListener("load", function() {
          alert('All fields required!');
       }
 
-      if (!isNaN(Number(pilotInput.value))) {
+      if (!isNaN(pilotInput.value)) {
          alert('Invalid input. Please enter a pilot name.');
       }
 
-      if (!isNaN(Number(copilotInput.value))) {
+      if (!isNaN(copilotInput.value)) {
          alert('Invalid input. Please enter a co-pilot name.');
       }
 
