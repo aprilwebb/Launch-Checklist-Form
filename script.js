@@ -58,7 +58,7 @@ window.addEventListener("load", function() {
             cargoStatus.innerHTML = `Cargo mass is low enough for launch.`;
          }
 
-         if (fuelInput.value > 10000 && cargoInput.value < 10000) {
+         if (fuelInput.value >= 10000 && cargoInput.value <= 10000) {
             faultyItems.style.visibility = "visible";
             launchStatus.style.color = "green";
             launchStatus.innerHTML = `Shuttle Is Ready For Launch`;
